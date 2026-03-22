@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, orange, peachpuff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial;
+}
+
+.login-box {
+  background: rgba(255,255,255,0.2);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: orange;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: darkorange;
+}
+
+#error {
+  color: red;
+  font-size: 14px;
+}
+
+#success {
+  color: green;
+  font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+  <h2>Login</h2>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  
+  <p id="error"></p>
+  <p id="success"></p>
+</div>
+
+<script>
+function login() {
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+
+  if(user === "Fasika" && pass === "1515") {
+   window.location.href = "birthday.html.html";
+    document.getElementById("success").innerText = "Login successful 🎉";
+    document.getElementById("error").innerText = "";
+  } else {
+    document.getElementById("error").innerText = "Incorrect username or password!";
+    document.getElementById("success").innerText = "";
+  }
+}
+</script>
+
+</body>
+</html>
